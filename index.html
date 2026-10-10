@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FocusFit AI — Study Space, Tuned to You</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#"><span class="brand-mark">F</span><span>FocusFit <b>AI</b></span></a>
+      <span class="top-note"><span class="live-dot"></span> PERSONALIZED STUDY LAB</span>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">YOUR SPACE. YOUR BRAIN. YOUR FLOW.</p>
+          <h1>Make your study<br><span>space work for you.</span></h1>
+          <p class="hero-text">A personal study-space coach that turns your preferences, task, and room conditions into a practical setup plan — not another one-size-fits-all study tip.</p>
+          <div class="hero-tags"><span>✦ Explainable recommendations</span><span>◉ Noise-aware</span><span>⌁ Built for students</span></div>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a personalized study desk">
+          <div class="orb orb-one"></div><div class="orb orb-two"></div>
+          <div class="desk-card">
+            <div class="window"><i></i><i></i><i></i><span></span></div>
+            <div class="plant"><b></b><i></i><i></i><i></i></div>
+            <div class="lamp"><b></b><i></i></div>
+            <div class="book book-one"></div><div class="book book-two"></div>
+            <div class="laptop"><div class="screen"><div class="screen-line"></div><div class="screen-line short"></div><div class="screen-chart"></div></div><div class="keyboard"></div></div>
+            <div class="mug"></div>
+            <div class="desk"></div>
+            <div class="floating-chip">FOCUS MODE <strong>ON</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <div class="section-heading">
+          <div><p class="eyebrow">01 / BUILD YOUR PROFILE</p><h2>Tell us how you focus.</h2></div>
+          <span class="step-pill">~ 1 minute</span>
+        </div>
+        <form id="profile-form">
+          <div class="form-grid">
+            <fieldset class="question-card">
+              <legend><span class="q-number">01</span> What are you working on?</legend>
+              <label class="choice"><input type="radio" name="task" value="reading" checked><span class="choice-icon">▤</span><span><b>Reading / theory</b><small>Understand and remember concepts</small></span></label>
+              <label class="choice"><input type="radio" name="task" value="problem"><span class="choice-icon">⌘</span><span><b>Problem solving</b><small>Calculations, coding, practice</small></span></label>
+              <label class="choice"><input type="radio" name="task" value="writing"><span class="choice-icon">✎</span><span><b>Writing / creating</b><small>Reports, ideas, presentations</small></span></label>
+            </fieldset>
+
+            <fieldset class="question-card">
+              <legend><span class="q-number">02</span> What helps you concentrate?</legend>
+              <label class="choice"><input type="radio" name="sound" value="quiet" checked><span class="choice-icon">♩</span><span><b>Quiet is best</b><small>Minimal background sound</small></span></label>
+              <label class="choice"><input type="radio" name="sound" value="steady"><span class="choice-icon">〰</span><span><b>Steady background sound</b><small>Fan, rain, or soft noise</small></span></label>
+              <label class="choice"><input type="radio" name="sound" value="music"><span class="choice-icon">♫</span><span><b>Instrumental music</b><small>No lyrics if possible</small></span></label>
+            </fieldset>
+
+            <fieldset class="question-card">
+              <legend><span class="q-number">03</span> Your ideal visual environment?</legend>
+              <label class="choice"><input type="radio" name="light" value="bright" checked><span class="choice-icon">☼</span><span><b>Bright and clear</b><small>Strong, even lighting</small></span></label>
+              <label class="choice"><input type="radio" name="light" value="soft"><span class="choice-icon">◐</span><span><b>Soft and warm</b><small>Gentler light, fewer distractions</small></span></label>
+              <label class="choice"><input type="radio" name="light" value="natural"><span class="choice-icon">☀</span><span><b>Natural daylight</b><small>Near a window when possible</small></span></label>
+            </fieldset>
+
+            <fieldset class="question-card">
+              <legend><span class="q-number">04</span> How long can you focus comfortably?</legend>
+              <label class="choice"><input type="radio" name="session" value="15"><span class="choice-icon">◷</span><span><b>15 minutes</b><small>Short sprints, frequent resets</small></span></label>
+              <label class="choice"><input type="radio" name="session" value="25" checked><span class="choice-icon">◴</span><span><b>25 minutes</b><small>A focused block and short break</small></span></label>
+              <label class="choice"><input type="radio" name="session" value="45"><span class="choice-icon">◵</span><span><b>45 minutes</b><small>Longer deep-work blocks</small></span></label>
+            </fieldset>
+          </div>
+
+          <div class="noise-panel">
+            <div><p class="eyebrow">ROOM CHECK</p><h3>How noisy is your space right now?</h3><p class="muted">Choose what you notice. This prototype uses your estimate; it does not record audio.</p></div>
+            <div class="noise-control">
+              <div class="noise-labels"><span>Quiet</span><span id="noise-value">Moderate</span><span>Noisy</span></div>
+              <input id="noise" type="range" min="0" max="100" value="45" aria-label="Current noise level">
+              <div class="range-scale"><span>0</span><span>50</span><span>100</span></div>
+            </div>
+          </div>
+          <button class="primary-button" type="submit">Generate my focus plan <span>↗</span></button>
+        </form>
+      </section>
+
+      <section id="results" class="results hidden" aria-live="polite">
+        <div class="section-heading">
+          <div><p class="eyebrow">02 / YOUR PERSONAL PLAN</p><h2>Your focus setup.</h2></div>
+          <span class="confidence-pill"><span class="live-dot"></span> Preference-matched</span>
+        </div>
+        <div class="result-banner"><div class="result-icon">✦</div><div><p class="eyebrow">YOUR SPACE RECIPE</p><h3 id="result-title">The Calm Focus Setup</h3><p id="result-summary"></p></div></div>
+        <div class="recommendation-grid">
+          <article class="recommendation"><span class="rec-icon">◉</span><p class="eyebrow">SOUND</p><h3 id="sound-title"></h3><p id="sound-copy"></p></article>
+          <article class="recommendation"><span class="rec-icon">☼</span><p class="eyebrow">LIGHT & DESK</p><h3 id="light-title"></h3><p id="light-copy"></p></article>
+          <article class="recommendation"><span class="rec-icon">◷</span><p class="eyebrow">STUDY RHYTHM</p><h3 id="rhythm-title"></h3><p id="rhythm-copy"></p></article>
+        </div>
+        <div class="why-panel"><div class="why-symbol">✧</div><div><p class="eyebrow">WHY THIS MATCH?</p><h3>Recommendations you can understand.</h3><p id="why-copy"></p></div></div>
+        <div class="action-row"><button id="copy-plan" class="secondary-button" type="button">Copy my plan ⧉</button><button id="edit-profile" class="text-button" type="button">← Adjust preferences</button><span id="copy-status" role="status"></span></div>
+        <p class="disclaimer">FocusFit AI is a student-built prototype for study planning, not a medical or psychological assessment. Recommendations are suggestions; keep what works for you.</p>
+      </section>
+    </main>
+    <footer><span>FocusFit AI</span><span>Personalized by preferences. Designed for real student life.</span><span>PROTOTYPE / 2026</span></footer>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
